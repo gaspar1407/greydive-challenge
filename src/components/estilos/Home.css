@@ -1,0 +1,51 @@
+.home-container {
+    height: 100vh;
+    background-image: linear-gradient(180deg,#131313,#292929 100%,#292929);
+    
+}
+
+ 
+
+.h-titulo{
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 4.3rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+.logo-img{
+    width: 20vh;
+    margin-top: 10vh;
+    margin-left: 20vh;
+    
+   
+}
+
+.buton-container{
+    display: block;
+   text-align: center;
+    margin: 12% auto;
+  
+   
+}
+
+.botonVisitar{
+    padding: 10px 20px;
+    background-color: #d4145a;
+    color: #fff;
+    border: none;
+   
+    font-size: 28px;
+    margin-right: 20px;
+
+    cursor: pointer;
+    transition: all 500ms;
+    border-radius: 5px;
+
+}
+.botonVisitar:hover{
+    transform: scale(1.05);
+}
