@@ -49,3 +49,22 @@
 .botonVisitar:hover{
     transform: scale(1.05);
 }
+
+@media only screen and (max-width : 900px){
+    .logo-img{
+        margin-top: 5vh;
+        margin-left: 5vh;
+    }
+    .h-titulo{
+
+        margin-top: 30%;
+    }
+    .buton-container{
+        margin: 50% auto;
+
+    }
+
+    .botonVisitar{
+        margin-right: 0px;
+    }
+}

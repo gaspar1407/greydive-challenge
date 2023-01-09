@@ -139,3 +139,29 @@ de un input de tipo checkbox*/
     transform: scale(1.03);
     transition: all 0.20s;
 }
+
+
+@media only screen and (max-width : 900px){
+    .contenedorInpputs{
+        width: 300px;
+        margin: 25px auto;
+    }
+    .tituloInput{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .formEmail{
+        font-size: 16px;
+    }
+    .buton-submit{
+        width: 150px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        
+    }
+    .btn-container{
+        text-align: center;
+        margin: 5% auto;
+    }
+
+}

@@ -15,6 +15,7 @@ export default function Form({ setModal, modal }) {
     full_name: "Debe ingresar su nombre",
     email: "",
   });
+
   const [input, setInput] = useState({
     full_name: "",
     email: "",
@@ -23,7 +24,10 @@ export default function Form({ setModal, modal }) {
   });
 
   const [terms, setTerms] = useState(false);
+
   const navigate = useNavigate();
+
+  //funcion para cerrar el formulario y setear los inputs a vacios
   const handleClose = () => {
     setInput({
       full_name: "",
@@ -35,6 +39,7 @@ export default function Form({ setModal, modal }) {
     setModal(false);
   };
 
+  //funcion para verificar los errores
   const validador = (inputs) => {
     let validations = {};
     const nameExpresion = /[0-9/'0-9'/,*+._&=():;%$#!|-]/gi;
@@ -52,6 +57,7 @@ export default function Form({ setModal, modal }) {
     return validations;
   };
 
+  //funcion que modifica el estado con los datos ingresados y verifica errores
   const handleOnChange = (e) => {
     setInput({
       ...input,
@@ -59,10 +65,13 @@ export default function Form({ setModal, modal }) {
     });
     setTerms(true);
     const errores = validador({ ...input, [e.target.name]: e.target.value });
-    console.log(input);
+    /*  console.log(input); */
     setErrors(errores);
   };
 
+  //funcion para enviar el form a la db
+  //muestra el mensaje si todo salio bien
+  //setea los inputs
   const enviarForm = async (e) => {
     e.preventDefault();
     try {
@@ -225,7 +234,7 @@ export default function Form({ setModal, modal }) {
           </div>
         </Modal.Body>
         <Modal.Footer className="modal-footer">
-          <div>
+          <div className="btn-container">
             {db.items.map((e) =>
               e.type === "submit" ? (
                 <label>

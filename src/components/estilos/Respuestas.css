@@ -80,6 +80,28 @@ h5{
     }
 }
 
-/*  .respuestas-container{
-     height: 110vh;
-     background-size: cover; */
+@media only screen and (max-width : 900px){
+    .h-titulo-rta{
+        margin-top: 10%;
+    }
+    .card-container{
+        align-items: center;
+        margin: 5% auto;
+    }
+    .card{
+        width: 300px;
+        height: 450px;
+        margin: 40px 10px 5px 20px;
+    }
+    h4{
+        margin-left: 20px;
+        font-size: 18px;
+    }
+    h5{
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+    .buton-container-rta{
+        margin: 10% auto;
+    }
+}
