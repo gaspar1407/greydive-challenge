@@ -30,8 +30,4 @@ Abra [http://localhost:3000](http://localhost:3000) para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.\
 También puede ver errores en la consola.
 
-### Aclaración
-Para correr el proyecto en entorno local se necesita crear un archivo `.env` que incluya la api key y los valores necesarios para conectar la app con la base de datos firebase de su preferencia.
-Los valores necaserios son los detallados en la constante "firebaseConfig" 
-
 #### Por caulquier duda y /o consulta podes contactarme a "gasparmunoz@hotmail.com"
