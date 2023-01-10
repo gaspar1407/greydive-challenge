@@ -6,6 +6,7 @@ Es un proyecto creado con [Create React App](https://github.com/facebook/create-
 Las respuestas de la encuesta son enviadas a una base de datos de [Firebase](https://console.firebase.google.com/u/0/),
 la cual nos permite almacenar las respuestas de los usuarios para luego mostrarlas.
 
+
 ## tecnologías utilizadas
 
 ![js (1)](https://user-images.githubusercontent.com/100777846/211371216-5941d5ee-eb54-4c1f-941f-d5d845da55cd.png) 
@@ -29,47 +30,8 @@ Abra [http://localhost:3000](http://localhost:3000) para verlo en su navegador.
 La página se volverá a cargar cuando realice cambios.\
 También puede ver errores en la consola.
 
-### `npm test`
+### Aclaración
+Para correr el proyecto en entorno local se necesita crear un archivo `.env` que incluya la api key y los valores necesarios para conectar la app con la base de datos firebase de su preferencia.
+Los valores necaserios son los detallados en la constante "firebaseConfig" 
 
-Inicia el corredor de prueba en el modo de reloj interactivo.\
-Consulte la sección sobre [running tests](https://facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
-
-### `npm run build`
-
-Construye la aplicación para producción en la carpeta `build`.
-Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
-
-La compilación se minimiza y los nombres de archivo incluyen los hashes.
-¡Tu aplicación está lista para ser implementada!
-
-Conslte la sección sobre [deployment](https://facebook.github.io/create-react-app/docs/deployment) para obtener más información.
-
-## Aprende más
-
-Puedes aprender más en el [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Para aprender React, echa un vistazo a la [React documentation](https://reactjs.org/).
-
-### División de código
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Análisis del tamaño del paquete
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Hacer una aplicación web progresiva
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Configuración avanzada
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` no logra minificar
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Por caulquier duda y /o consulta podes contactarme a "gasparmunoz@hotmail.com"
