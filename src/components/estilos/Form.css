@@ -3,6 +3,21 @@
     background-image: repeating-radial-gradient(circle farthest-corner at -1% 0,#d4034f ,#90088b 50%/* 30%,#662d91 53%,#90088b 78%,#b1005e */);
 }
 
+.form-container::-webkit-scrollbar {
+    margin-top: 20px;
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .form-container::-webkit-scrollbar-track {
+    background: rgb(81, 81, 81);        /* color of the tracking area */
+  }
+  
+  .form-container::-webkit-scrollbar-thumb {
+    background-color:#d4145a;    /* color of the scroll thumb */
+    border-radius: 15px;       /* roundness of the scroll thumb */
+    border: 3px solid #d4145a;  /* creates padding around scroll thumb */
+  }
+
 .logo-modal{
     width: 30vh;
 }

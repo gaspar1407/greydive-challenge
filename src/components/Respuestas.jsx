@@ -6,9 +6,9 @@ import "./estilos/Respuestas.css";
 
 export default function Respuestas() {
   const [lista, setLista] = useState([]);
-  const dbFire = getFirestore(appFirebase);
 
   useEffect(() => {
+    const dbFire = getFirestore(appFirebase);
     const getLista = async () => {
       try {
         const querySnapshot = await getDocs(collection(dbFire, "respuestas"));
