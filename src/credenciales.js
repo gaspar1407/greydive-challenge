@@ -7,12 +7,12 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_APIKEY,
-  authDomain: process.env.REACT_APP_AUTH,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  apiKey: "AIzaSyCvU1qryIT5RntYqbIkrXITQD1PHdB9H3A",
+  authDomain: "graydive-challenge.firebaseapp.com",
+  projectId: "graydive-challenge",
+  storageBucket: "graydive-challenge.appspot.com",
+  messagingSenderId: "750309982104",
+  appId: "1:750309982104:web:36ac39694ddaa549aab5ed",
 };
 
 // Initialize Firebase
