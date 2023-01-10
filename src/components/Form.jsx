@@ -128,9 +128,9 @@ export default function Form({ setModal, modal }) {
       <form onSubmit={enviarForm} autoComplete="off">
         <Modal.Body>
           <div>
-            {db.items.map((e, index) =>
+            {db.items.map((e) =>
               e.type === "text" ? (
-                <div className="contenedorInpputs" key={index}>
+                <div className="contenedorInpputs">
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -155,7 +155,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "email" ? (
-                <div className="contenedorInpputs" key={index}>
+                <div className="contenedorInpputs">
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -180,7 +180,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "date" ? (
-                <div className="contenedorInpputs" key={index}>
+                <div className="contenedorInpputs">
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -194,7 +194,7 @@ export default function Form({ setModal, modal }) {
                   ></input>
                 </div>
               ) : e.type === "select" ? (
-                <div className="contenedorInpputs" key={index}>
+                <div className="contenedorInpputs">
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -212,7 +212,7 @@ export default function Form({ setModal, modal }) {
                   </select>
                 </div>
               ) : e.type === "checkbox" ? (
-                <label className="content-input" key={index}>
+                <label className="content-input">
                   <a
                     href="https://policies.google.com/terms?hl=es"
                     target="_blank"
@@ -235,9 +235,9 @@ export default function Form({ setModal, modal }) {
         </Modal.Body>
         <Modal.Footer className="modal-footer">
           <div className="btn-container">
-            {db.items.map((e, index) =>
+            {db.items.map((e) =>
               e.type === "submit" ? (
-                <label key={index}>
+                <label>
                   <input type={e.type} className="buton-submit"></input>
                 </label>
               ) : null
