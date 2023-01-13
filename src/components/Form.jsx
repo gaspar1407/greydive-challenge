@@ -14,6 +14,9 @@ export default function Form({ setModal, modal }) {
   const [errors, setErrors] = useState({
     full_name: "Debe ingresar su nombre",
     email: "",
+    birth_date: "",
+    country_of_origin: "",
+    terms_and_conditions: false,
   });
 
   const [input, setInput] = useState({
@@ -34,8 +37,8 @@ export default function Form({ setModal, modal }) {
       email: "",
       birth_date: "",
       country_of_origin: "",
-      terms_and_conditions: "",
     });
+    setTerms(false);
     setModal(false);
   };
 
@@ -45,6 +48,9 @@ export default function Form({ setModal, modal }) {
     const nameExpresion = /[0-9/'0-9'/,*+._&=():;%$#!|-]/gi;
     const emailExpresion =
       /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    const DATE_REGEX =
+      /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
+
     if (!inputs.full_name) {
       validations.full_name = "Debe ingresar su nombre";
     } else if (nameExpresion.test(inputs.full_name)) {
@@ -53,6 +59,16 @@ export default function Form({ setModal, modal }) {
       validations.email = "Debe ingresar su email";
     } else if (!emailExpresion.test(inputs.email)) {
       validations.email = "Ingrese un email válido";
+    } else if (!inputs.birth_date) {
+      validations.birth_date = "Ingrese una fecha";
+    } else if (!DATE_REGEX.test(inputs.birth_date)) {
+      validations.birth_date = "Ingrese una fecha válida";
+    } else if (!inputs.country_of_origin) {
+      validations.country_of_origin = "Debe ingresar su Pais";
+    } else if (!inputs.terms_and_conditions) {
+      validations.terms_and_conditions = "Acepte los terminos y condiciones";
+    } else if (inputs.terms_and_conditions === "true") {
+      validations.terms_and_conditions = "Acepte los terminos y condiciones";
     }
     return validations;
   };
@@ -63,9 +79,20 @@ export default function Form({ setModal, modal }) {
       ...input,
       [e.target.name]: e.target.value,
     });
-    setTerms(true);
-    const errores = validador({ ...input, [e.target.name]: e.target.value });
-    /*  console.log(input); */
+    if (e.target.name === "terms_and_conditions") {
+      if (terms === false) {
+        setTerms(true);
+      } else {
+        setTerms(false);
+      }
+    }
+
+    const errores = validador({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+    console.log("Soy Inputs", input);
+    console.log("Soy Errors", errores);
     setErrors(errores);
   };
 
@@ -74,35 +101,47 @@ export default function Form({ setModal, modal }) {
   //setea los inputs
   const enviarForm = async (e) => {
     e.preventDefault();
-    try {
-      await addDoc(collection(dbFire, "respuestas"), {
-        ...input,
-        ...terms,
+    if (Object.values(errors).length > 0) {
+      return Swal.fire({
+        title: "Existen Errores",
+        icon: "error",
+        iconColor: "#d4034f",
+        confirmButtonColor: "#d4034f",
+        background: "#23252E",
+        color: "#fff",
+        confirmButtonText: "volver a intentar",
+      }).then((result) => {
+        navigate("/");
       });
-    } catch (error) {
-      console.log(error);
+    } else {
+      try {
+        await addDoc(collection(dbFire, "respuestas"), {
+          ...input,
+          ...terms,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      Swal.fire({
+        title: "Formulario enviado correctamente",
+        icon: "success",
+        iconColor: "#d4034f",
+        confirmButtonColor: "#d4034f",
+        background: "#23252E",
+        color: "#fff",
+        confirmButtonText: "Ver Respuestas",
+      }).then((result) => {
+        setInput({
+          full_name: "",
+          email: "",
+          birth_date: "",
+          country_of_origin: "",
+        });
+        setTerms(false);
+        setModal(false);
+        navigate("/respuestas");
+      });
     }
-
-    Swal.fire({
-      title: "Formulario enviado correctamente",
-      icon: "success",
-      iconColor: "#d4034f",
-      confirmButtonColor: "#d4034f",
-      background: "#23252E",
-      color: "#fff",
-      confirmButtonText: "Ver Respuestas",
-    }).then((result) => {
-      navigate("/respuestas");
-    });
-    setInput({
-      full_name: "",
-      email: "",
-      birth_date: "",
-      country_of_origin: "",
-      terms_and_conditions: false,
-    });
-    setTerms(false);
-    setModal(false);
   };
 
   return (
@@ -187,11 +226,22 @@ export default function Form({ setModal, modal }) {
                   <input
                     type={e.type}
                     name={e.name}
-                    value={input.name}
+                    value={input.birth_date}
                     onChange={(e) => handleOnChange(e)}
                     className="formEmail"
                     required
                   ></input>
+                  {errors.birth_date ? (
+                    <p
+                      style={{
+                        color: "red",
+                        marginTop: "5px",
+                        marginBottom: "0",
+                      }}
+                    >
+                      {errors.birth_date}
+                    </p>
+                  ) : null}
                 </div>
               ) : e.type === "select" ? (
                 <div className="contenedorInpputs">
@@ -203,13 +253,27 @@ export default function Form({ setModal, modal }) {
                     name={e.name}
                     onChange={(e) => handleOnChange(e)}
                     value={input.country_of_origin}
+                    required
                   >
-                    <option>Pais de Origen:</option>
+                    <option selected hidden key="99">
+                      Pais de Origen:
+                    </option>
                     {e.options &&
                       e.options.map((e) => (
                         <option value={e.value}>{e.label}</option>
                       ))}
                   </select>
+                  {errors.country_of_origin ? (
+                    <p
+                      style={{
+                        color: "red",
+                        marginTop: "5px",
+                        marginBottom: "0",
+                      }}
+                    >
+                      {errors.country_of_origin}
+                    </p>
+                  ) : null}
                 </div>
               ) : e.type === "checkbox" ? (
                 <label className="content-input">
@@ -228,6 +292,17 @@ export default function Form({ setModal, modal }) {
                     required
                   ></input>
                   <i></i>
+                  {errors.terms_and_conditions ? (
+                    <p
+                      style={{
+                        color: "red",
+                        marginTop: "5px",
+                        marginBottom: "0",
+                      }}
+                    >
+                      {errors.terms_and_conditions}
+                    </p>
+                  ) : null}
                 </label>
               ) : null
             )}
