@@ -63,6 +63,10 @@ export default function Form({ setModal, modal }) {
       validations.birth_date = "Ingrese una fecha";
     } else if (!DATE_REGEX.test(inputs.birth_date)) {
       validations.birth_date = "Ingrese una fecha válida";
+    } else if (parseInt(inputs.birth_date.split("-")[0]) > 2023) {
+      validations.birth_date = "Ingrese una fecha válida";
+    } else if (parseInt(inputs.birth_date.split("-")[0]) < 1900) {
+      validations.birth_date = "Ingrese una fecha válida";
     } else if (!inputs.country_of_origin) {
       validations.country_of_origin = "Debe ingresar su Pais";
     } else if (!inputs.terms_and_conditions) {
@@ -70,6 +74,7 @@ export default function Form({ setModal, modal }) {
     } else if (inputs.terms_and_conditions === "true") {
       validations.terms_and_conditions = "Acepte los terminos y condiciones";
     }
+
     return validations;
   };
 
@@ -91,8 +96,8 @@ export default function Form({ setModal, modal }) {
       ...input,
       [e.target.name]: e.target.value,
     });
-    console.log("Soy Inputs", input);
-    console.log("Soy Errors", errores);
+    /* console.log("Soy Inputs", input);
+    console.log("Soy Errors", errores); */
     setErrors(errores);
   };
 
@@ -169,7 +174,7 @@ export default function Form({ setModal, modal }) {
           <div>
             {db.items.map((e) =>
               e.type === "text" ? (
-                <div className="contenedorInpputs">
+                <div className="contenedorInpputs" key={e.name}>
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -194,7 +199,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "email" ? (
-                <div className="contenedorInpputs">
+                <div className="contenedorInpputs" key={e.name}>
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -219,7 +224,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "date" ? (
-                <div className="contenedorInpputs">
+                <div className="contenedorInpputs" key={e.name}>
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -244,7 +249,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "select" ? (
-                <div className="contenedorInpputs">
+                <div className="contenedorInpputs" key={e.name}>
                   <label className="tituloInput">
                     <b>{e.label}</b>
                   </label>
@@ -255,12 +260,14 @@ export default function Form({ setModal, modal }) {
                     value={input.country_of_origin}
                     required
                   >
-                    <option selected hidden key="99">
+                    <option selected hidden>
                       Pais de Origen:
                     </option>
                     {e.options &&
                       e.options.map((e) => (
-                        <option value={e.value}>{e.label}</option>
+                        <option value={e.value} key={e.label}>
+                          {e.label}
+                        </option>
                       ))}
                   </select>
                   {errors.country_of_origin ? (
@@ -276,7 +283,7 @@ export default function Form({ setModal, modal }) {
                   ) : null}
                 </div>
               ) : e.type === "checkbox" ? (
-                <label className="content-input">
+                <label className="content-input" key={e.name}>
                   <a
                     href="https://policies.google.com/terms?hl=es"
                     target="_blank"
@@ -312,7 +319,7 @@ export default function Form({ setModal, modal }) {
           <div className="btn-container">
             {db.items.map((e) =>
               e.type === "submit" ? (
-                <label>
+                <label key={e.label}>
                   <input type={e.type} className="buton-submit"></input>
                 </label>
               ) : null
