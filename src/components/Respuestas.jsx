@@ -28,7 +28,7 @@ export default function Respuestas() {
     <div className="respuestas-container">
       <div className="h1-container">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/1280px-Firebase_Logo.svg.png"
+          src="https://uploads-ssl.webflow.com/612fcc289671bc539ecd004e/612ff6936ef1a98f2a9b29cf_logo-greydive-gris.png"
           alt="logo greydive"
           className="logo-img"
         />
@@ -54,7 +54,7 @@ export default function Respuestas() {
       </div>
       <div className="buton-container-rta">
         <Link to="/">
-          <button className="botonVolver">Volver al Home</button>
+          <button className="botonVisitar">Volver al Home</button>
         </Link>
       </div>
     </div>
