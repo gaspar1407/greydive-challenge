@@ -16,12 +16,12 @@ export default function Home() {
     <div className="home-container">
       <div className="h1-container">
         <a
-          href="https://firebase.google.com/?hl=es-419"
+          href="https://www.greydive.com/" target="_blank" rel="noreferrer"
           target="_blank"
           rel="noreferrer"
         >
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/1280px-Firebase_Logo.svg.png"
+            src="https://uploads-ssl.webflow.com/612fcc289671bc539ecd004e/612ff6936ef1a98f2a9b29cf_logo-greydive-gris.png"
             alt="logo firebase"
             className="logo-img"
           />
