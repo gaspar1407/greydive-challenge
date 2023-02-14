@@ -1,6 +1,6 @@
 .home-container {
     height: 100vh;
-    background-image: linear-gradient(180deg,#c0c0c0,#f1cf70 100%,#d4c6c6);
+    background-image: linear-gradient(180deg,#131313,#292929 100%,#292929);
     
 }
 
@@ -8,7 +8,7 @@
 
 .h-titulo{
     font-family: 'Inter', sans-serif;
-    color: rgba(75, 74, 74, 0.829);
+    color: #fff;
     font-size: 4.3rem;
     font-weight: bolder;
     text-align: center;
@@ -34,10 +34,10 @@
 
 .botonVisitar{
     padding: 10px 20px;
-    background-color: #f1cf70;
-    color: rgba(75, 74, 74, 0.829);
+      background-color: #d4145a;
+    color: #fff;
     border: none;
-    box-shadow: 3px 2px 3px 2px rgba(0,0,0,0.2);
+    
     font-size: 28px;
     margin-right: 20px;
 
