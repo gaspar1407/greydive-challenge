@@ -1,7 +1,6 @@
 
 .form-container{
-    background-image: repeating-radial-gradient(circle farthest-corner at -1% 0,#c0c0c0 ,#f1cf70 50%/* 30%,#662d91 53%,#90088b 78%,#b1005e */);
-}
+   background-image: repeating-radial-gradient(circle farthest-corner at -1% 0,#d4034f ,#90088b 50%/* 30%,#662d91 53%,#90088b 78%,#b1005e */);
 
 .form-container::-webkit-scrollbar {
     margin-top: 20px;
@@ -13,9 +12,9 @@
   }
   
   .form-container::-webkit-scrollbar-thumb {
-    background-color:#c0c0c0;    /* color of the scroll thumb */
+   background-color:#d4145a;  /* color of the scroll thumb */
     border-radius: 15px;       /* roundness of the scroll thumb */
-    border: 3px solid #c0c0c0;  /* creates padding around scroll thumb */
+   border: 3px solid #d4145a;  /* creates padding around scroll thumb */
   }
 
 .logo-modal{
@@ -23,7 +22,7 @@
 }
 
 .modal-header{
-    background-image: repeating-linear-gradient(180deg/* ,#131313 */,#d4c6c6 100%,#d4c6c6);
+    background-image: repeating-linear-gradient(180deg/* ,#131313 */,#292929 100%,#292929);
 }
 .contenedorInpputs{
     align-content: center;
@@ -37,7 +36,7 @@
 
 
 .tituloInput{
-    color: rgba(75, 74, 74, 0.829);
+    color: #23252E;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     text-align: left;
@@ -46,9 +45,9 @@
 
 .formEmail{
     background-color: #fff;
-    border: 3px solid #f1cf70;
+     border: 3px solid rgba(117,11,114,.8);
     width: 300px; 
-    color: rgba(75, 74, 74, 0.829);
+    color: #292929;
     font-size: 20px;
     border-radius: 5px ;
 }
@@ -115,7 +114,7 @@ de un input de tipo checkbox*/
 }
  
 .content-input input[type=checkbox]:checked + i{
- background: #f1cf70;
+ background: #90088b;
 }
 
 .content-input input[type=checkbox] + i:after{
@@ -135,7 +134,7 @@ de un input de tipo checkbox*/
 }
 
 .modal-footer{
-    background-image: repeating-linear-gradient(180deg/* ,#131313 */,#d4c6c6 100%,#d4c6c6);
+  background-image: repeating-linear-gradient(180deg/* ,#131313 */,#292929 100%,#292929);
 }
 
 .buton-submit{
