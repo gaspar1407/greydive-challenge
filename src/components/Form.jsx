@@ -130,9 +130,9 @@ export default function Form({ setModal, modal }) {
       Swal.fire({
         title: "Formulario enviado correctamente",
         icon: "success",
-        iconColor: "#f1cf70",
-        confirmButtonColor: "#f1cf70",
-        background: "#c0c0c0",
+         iconColor: "#d4034f",
+        confirmButtonColor: "#d4034f",
+        background: "#23252E",
         color: "#fff",
         confirmButtonText: "Ver Respuestas",
       }).then((result) => {
@@ -160,8 +160,8 @@ export default function Form({ setModal, modal }) {
       <Modal.Header className="modal-header">
         <Modal.Title id="contained-modal-title-vcenter">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/1280px-Firebase_Logo.svg.png"
-            alt="logo firebase"
+            src="https://uploads-ssl.webflow.com/612fcc289671bc539ecd004e/612ff6936ef1a98f2a9b29cf_logo-greydive-gris.png"
+            alt="logo greydive"
             className="logo-modal"
           />
         </Modal.Title>
