@@ -15,14 +15,18 @@ export default function Home() {
   return (
     <div className="home-container">
       <div className="h1-container">
-        <a href="https://www.greydive.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://firebase.google.com/?hl=es-419"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img
-            src="https://uploads-ssl.webflow.com/612fcc289671bc539ecd004e/612ff6936ef1a98f2a9b29cf_logo-greydive-gris.png"
-            alt="logo greydive"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/1280px-Firebase_Logo.svg.png"
+            alt="logo firebase"
             className="logo-img"
           />
         </a>
-        <h1 className="h-titulo">Challenge Greydive.</h1>
+        <h1 className="h-titulo">Challenge Firebase.</h1>
       </div>
       <div className="buton-container">
         <button className="botonVisitar" onClick={(e) => abrirModal(e)}>
