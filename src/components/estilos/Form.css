@@ -1,7 +1,5 @@
 
-.form-container{
-   background-image: repeating-radial-gradient(circle farthest-corner at -1% 0,#d4034f ,#90088b 50%/* 30%,#662d91 53%,#90088b 78%,#b1005e */);
-}
+
 
 .form-container::-webkit-scrollbar {
     margin-top: 20px;
